@@ -1,11 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
-
 import Layout from '@/components/Layout';
 import { MOVIE_API_KEY, MOVIE_URL } from '@/utils/constant';
 import Loading from '@/components/loading/Loading';
 import { useState } from 'react';
-import MovieCard from '@/components/cards/MovieCard';
 import MovieInfiteScroll from '@/components/infinteScroll/MovieInfiteScroll';
 
 export default function Home({ movies }: { movies: any }) {

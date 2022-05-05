@@ -21,7 +21,6 @@ export default function MovieInfiteScroll({
     );
     const lastElementRef = useCallback(
         (node: any) => {
-            console.log(data, page, node);
             if (loading) return;
             if (observer.current) observer.current.disconnect();
             observer.current = new IntersectionObserver((entries) => {
