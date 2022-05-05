@@ -12,20 +12,20 @@ export default function SearchBar({
 
     const [input, setInput] = useState(``);
 
-    const handleInput = useCallback((value: string) => {
+    const handleInput = (value: string) => {
         setInput(value);
         debounceInput(value);
-    }, []);
-
-    const handleSearch = useCallback(() => {
+    };
+    console.log(input);
+    const handleSearch = () => {
         router.push({ pathname: `/search`, query: { search: input } });
-    }, []);
+    };
 
-    const handleKeypress = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+    const handleKeypress = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === `Enter`) {
             handleSearch();
         }
-    }, []);
+    };
 
     return (
         <div className="pt-2 relative text-gray-600">
@@ -38,7 +38,7 @@ export default function SearchBar({
                 onKeyDown={handleKeypress}
             />
             <button
-                onSubmit={handleSearch}
+                onClick={handleSearch}
                 type="submit"
                 className="absolute right-0 top-0 mt-5 mr-4"
             >
