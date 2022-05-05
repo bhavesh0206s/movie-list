@@ -16,7 +16,7 @@ export default function SearchBar({
         setInput(value);
         debounceInput(value);
     };
-    console.log(input);
+
     const handleSearch = () => {
         router.push({ pathname: `/search`, query: { search: input } });
     };
