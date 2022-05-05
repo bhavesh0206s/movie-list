@@ -6,11 +6,15 @@ import Layout from '@/components/Layout';
 import { MOVIE_API_KEY, MOVIE_URL } from '@/utils/constant';
 import Loading from '@/components/loading/Loading';
 
-export default function Home({ movies }) {
+export default function Home({ movies }: { movies: any }) {
     if (!movies) {
         return <Loading />;
     }
-    return <Layout></Layout>;
+    return (
+        <Layout>
+            <div></div>
+        </Layout>
+    );
 }
 
 export const getServerSideProps = async () => {

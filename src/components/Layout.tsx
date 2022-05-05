@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { Children } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
