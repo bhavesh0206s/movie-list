@@ -16,12 +16,10 @@ export default function Search({
     }
     return (
         <Layout>
-            <div className="grid grid-cols-4 gap-4">
-                <MovieInfiteScroll
-                    url={`${MOVIE_SEARCH_URL}?api_key=${MOVIE_API_KEY}&language=en-US&query=${query}&include_adult=false`}
-                    initialData={movies}
-                />
-            </div>
+            <MovieInfiteScroll
+                url={`${MOVIE_SEARCH_URL}?api_key=${MOVIE_API_KEY}&language=en-US&query=${query}&include_adult=false`}
+                initialData={movies}
+            />
         </Layout>
     );
 }

@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Head>
             <header
                 id="mainHeader"
-                className="w-full sticky top-0"
+                // className="w-full sticky top-0"
                 style={{
                     zIndex: 49,
                 }}

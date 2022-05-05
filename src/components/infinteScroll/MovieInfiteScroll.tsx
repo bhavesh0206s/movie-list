@@ -34,7 +34,7 @@ export default function MovieInfiteScroll({
     );
 
     return (
-        <>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 p-16">
             {data.map(
                 (
                     {
@@ -67,6 +67,6 @@ export default function MovieInfiteScroll({
                     }
                 },
             )}
-        </>
+        </div>
     );
 }

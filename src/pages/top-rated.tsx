@@ -1,11 +1,6 @@
-import Head from 'next/head';
-import Image from 'next/image';
-
 import Layout from '@/components/Layout';
 import { MOVIE_API_KEY, MOVIE_URL } from '@/utils/constant';
 import Loading from '@/components/loading/Loading';
-import { useState } from 'react';
-import MovieCard from '@/components/cards/MovieCard';
 import MovieInfiteScroll from '@/components/infinteScroll/MovieInfiteScroll';
 
 export default function TopRated({ movies }: { movies: any }) {
@@ -14,12 +9,10 @@ export default function TopRated({ movies }: { movies: any }) {
     }
     return (
         <Layout>
-            <div className="grid grid-cols-4 gap-4">
-                <MovieInfiteScroll
-                    url={`${MOVIE_URL}/top_rated?api_key=${MOVIE_API_KEY}&language=en-US&`}
-                    initialData={movies}
-                />
-            </div>
+            <MovieInfiteScroll
+                url={`${MOVIE_URL}/top_rated?api_key=${MOVIE_API_KEY}&language=en-US&`}
+                initialData={movies}
+            />
         </Layout>
     );
 }

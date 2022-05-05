@@ -12,12 +12,10 @@ export default function Newest({ movies }: { movies: any }) {
     }
     return (
         <Layout>
-            <div className="grid grid-cols-4 gap-4">
-                <MovieInfiteScroll
-                    url={`${MOVIE_URL}/now_playing?api_key=${MOVIE_API_KEY}&language=en-US&`}
-                    initialData={movies}
-                />
-            </div>
+            <MovieInfiteScroll
+                url={`${MOVIE_URL}/now_playing?api_key=${MOVIE_API_KEY}&language=en-US&`}
+                initialData={movies}
+            />
         </Layout>
     );
 }

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { KeyboardEvent, useCallback, useState } from 'react';
 
 export default function SearchBar({
     debounceInput,
@@ -12,26 +12,33 @@ export default function SearchBar({
 
     const [input, setInput] = useState(``);
 
-    const handleInput = (value: string) => {
+    const handleInput = useCallback((value: string) => {
         setInput(value);
         debounceInput(value);
-    };
+    }, []);
 
-    const onSearch = () => {
+    const handleSearch = useCallback(() => {
         router.push({ pathname: `/search`, query: { search: input } });
-    };
+    }, []);
+
+    const handleKeypress = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === `Enter`) {
+            handleSearch();
+        }
+    }, []);
 
     return (
-        <div className="pt-2 relative mx-auto text-gray-600">
+        <div className="pt-2 relative text-gray-600">
             <input
                 className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                 type="search"
                 name="search"
                 onChange={(e) => handleInput(e.target.value)}
                 placeholder="Search"
+                onKeyDown={handleKeypress}
             />
             <button
-                onClick={onSearch}
+                onSubmit={handleSearch}
                 type="submit"
                 className="absolute right-0 top-0 mt-5 mr-4"
             >

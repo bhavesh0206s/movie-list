@@ -12,12 +12,10 @@ export default function Home({ movies }: { movies: any }) {
     }
     return (
         <Layout>
-            <div className="grid grid-cols-4 gap-4">
-                <MovieInfiteScroll
-                    url={`${MOVIE_URL}/popular?api_key=${MOVIE_API_KEY}&language=en-US&`}
-                    initialData={moviesList}
-                />
-            </div>
+            <MovieInfiteScroll
+                url={`${MOVIE_URL}/popular?api_key=${MOVIE_API_KEY}&language=en-US&`}
+                initialData={moviesList}
+            />
         </Layout>
     );
 }
