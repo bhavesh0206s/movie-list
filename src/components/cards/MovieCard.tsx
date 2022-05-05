@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 export default function MovieCard({
     title,
-    imgSrc,
+    poster,
 }: {
     title: string;
-    imgSrc: string;
+    poster: string;
 }) {
     return (
         <div className="">
-            <img src={imgSrc} alt={title} />
+            <img src={poster} alt={title} className="" />
             <p className="text-lg text-blue-600 py-2">{title}</p>
         </div>
     );
