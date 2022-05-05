@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Navbar from './navbar/Navbar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -14,13 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     zIndex: 49,
                 }}
             >
-                {/* <Navbar
-                    hideNavItems={hideNavItems}
-                    logoutRedirect={logoutRedirect}
-                    showBackButton={showBackButton}
-                    setAuthOpen={setAuthOpen}
-                    user={user}
-                /> */}
+                <Navbar />
             </header>
             <main id="main">{children}</main>
 

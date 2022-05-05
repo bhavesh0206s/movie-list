@@ -14,7 +14,7 @@ export default function Newest({ movies }: { movies: any }) {
         <Layout>
             <div className="grid grid-cols-4 gap-4">
                 <MovieInfiteScroll
-                    url={`${MOVIE_URL}/latest?api_key=${MOVIE_API_KEY}&language=en-US&`}
+                    url={`${MOVIE_URL}/now_playing?api_key=${MOVIE_API_KEY}&language=en-US&`}
                     initialData={movies}
                 />
             </div>
@@ -25,7 +25,7 @@ export default function Newest({ movies }: { movies: any }) {
 export const getServerSideProps = async () => {
     try {
         const res = await fetch(
-            `${MOVIE_URL}/latest?api_key=${MOVIE_API_KEY}&language=en-US&page=1`,
+            `${MOVIE_URL}/now_playing?api_key=${MOVIE_API_KEY}&language=en-US&page=1`,
         );
         const movies = await res.json();
         return {
